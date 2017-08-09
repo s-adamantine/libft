@@ -6,9 +6,11 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 17:24:33 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/05 06:30:57 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/08/09 11:48:49 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {
@@ -16,5 +18,6 @@ char	*ft_strcpy(char *dst, const char *src)
 		ft_puterr("Abort trap: 6");
 	while (*src)
 		*dst++ = *src++;
+	*dst = '\0';
 	return (dst);
 }

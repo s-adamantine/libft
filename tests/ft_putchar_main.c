@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/05 09:42:05 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/05 18:13:38 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/09 15:27:29 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/09 15:31:07 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
-char *ft_strchr(const char *s, int c)
+int	main(int argc, char **argv)
 {
-	char *res;
+	int fd;
 
-	while (*s++)
-		if (*s == c)
-			return ((char *)s);
-	return (NULL);
+	fd = open(argv[1], O_RDWR);
+	ft_putchar_fd('c', fd);
+	close(fd);
+	return (0);
 }

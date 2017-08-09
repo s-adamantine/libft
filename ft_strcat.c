@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strup.c                                         :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/05 06:06:26 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/05 06:47:46 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/05 07:03:53 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/09 11:27:46 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char *ft_strdup(const char *s1)
+char *ft_strcat(char *dest, const char *src)
 {
-	char	*s2;
-
-	s2 = (char *)malloc(sizeof(char)*(ft_strlen(s1) + 1));
-	ft_strcpy(s2, s1);
-	return (s2);
+	while (*dest != '\0')
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = '\0';
+	return (dest);
 }

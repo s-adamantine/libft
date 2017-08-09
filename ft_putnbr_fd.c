@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/04 17:24:22 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/07 10:06:03 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/09 15:33:54 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
+#define INT_MIN -2147483648
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_puterr(char *str);
-size_t	ft_strlen(const char *s);
-char	*ft_strcpy(char *dst, const char *src);
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == INT_MIN)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = n * - 1;
+	}
+	if (n > 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
+}

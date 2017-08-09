@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/07 10:56:17 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/08/09 11:22:56 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putstr(char *str);
+void	ft_putstr(char const *s);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_puterr(char *str);
 void	ft_putendl(char const *s);
