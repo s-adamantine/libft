@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/13 12:08:34 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/08/13 12:45:28 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_strclr(char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s1);
+char	*ft_stralloc(char *str);
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
