@@ -6,12 +6,17 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 07:03:53 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/09 11:27:46 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/08/13 12:33:11 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char *ft_strcat(char *dest, const char *src)
 {
+	int i;
+
+	i = 0;
 	while (*dest != '\0')
 		dest++;
 	while (*src)

@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr_how.c                                       :+:      :+:    :+:   */
+/*   atoi_how.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/09 16:19:27 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/09 16:21:57 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/13 12:15:41 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/13 12:18:02 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	const char	*string = "okay";
-
-	printf("%p\n", string);
-	printf("%p\n", strchr(string, 'a'));
-	return (0);	
+	printf("%d\n", atoi(argv[1]));
+	return (0);
 }

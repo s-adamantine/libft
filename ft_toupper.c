@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puterr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 08:02:11 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/04 08:03:48 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/12 15:44:00 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/12 15:45:46 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putechar(char c)
+int	ft_toupper(int c)
 {
-	write(2, &c, 1);
-}
-
-void	ft_puterr(char *str)
-{
-	while (*str)
-		ft_putechar(*str++);	
+	if(c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }

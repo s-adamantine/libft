@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/05 09:42:05 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/09 18:05:10 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/12 15:46:27 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/12 15:47:10 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char *ft_strchr(const char *s, int c)
+int	ft_tolower(int c)
 {
-	while(*s)
-	{	
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}	
-	return (NULL);
+	if (c >= 'A' && c<= 'Z')
+		c += 32;
+	return (c);
 }

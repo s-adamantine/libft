@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/04 17:24:33 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/09 11:48:49 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/08/13 12:09:22 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	if (ft_strlen(dst) < ft_strlen(src))
-		ft_puterr("Abort trap: 6");
+//	if (ft_strlen(dst) < ft_strlen(src))
+//		ft_puterr("Abort trap: 6");
 	while (*src)
 		*dst++ = *src++;
 	*dst = '\0';

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   memset_how.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/05 09:42:05 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/09 18:05:10 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/12 11:10:10 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/12 15:20:14 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-char *ft_strchr(const char *s, int c)
+int	main(void)
 {
-	while(*s)
-	{	
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}	
-	return (NULL);
+	char	str[] = "Hello";;
+	void	*strcpy;
+
+	memset(str, 'a', 3);
+	printf("%s\n%s\n", str, strcpy);
+	return (0);
 }
