@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 17:24:33 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/14 02:10:03 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/19 16:31:43 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/19 17:09:16 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-char	*ft_strcpy(char *dst, const char *src)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	while (*src)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (dst);
+	while(*s1 != '\0' && *s2 != '\0')
+		if (*s1++ > *s2++)
+			return (1);
+		else
+			return (-1);
+	return (0);
 }

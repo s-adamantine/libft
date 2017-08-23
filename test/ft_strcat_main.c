@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 17:24:33 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/14 02:10:03 by sadamant         ###   ########.fr       */
+/*   Created: 2017/08/13 22:41:58 by sadamant          #+#    #+#             */
+/*   Updated: 2017/08/13 23:00:14 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-char	*ft_strcpy(char *dst, const char *src)
+int	main(int argc, char **argv)
 {
-	while (*src)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (dst);
+	char 		*dest = "";
+
+	strcat(dest, argv[1]);
+//	ft_strcat(dest, argv[1]);
+	printf("%s\n", argv[1]);
+	return (0);
 }

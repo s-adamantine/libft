@@ -6,7 +6,7 @@
 #    By: sadamant <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/09 06:18:48 by sadamant          #+#    #+#              #
-#    Updated: 2017/08/13 12:03:43 by sadamant         ###   ########.fr        #
+#    Updated: 2017/08/14 02:19:11 by sadamant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,4 +29,9 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
-	rm -rf *.o	
+	rm -rf *.o
+
+test: re
+	cd ../libft-unit-test
+	"make f"
+

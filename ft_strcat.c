@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 07:03:53 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/13 12:33:11 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/08/13 23:13:59 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 char *ft_strcat(char *dest, const char *src)
 {
-	int i;
-
-	i = 0;
-	while (*dest != '\0')
+//	if (!dest || !src)
+//		return (dest);
+	while (ft_isprint(*dest) == 1)
 		dest++;
 	while (*src)
 		*dest++ = *src++;
