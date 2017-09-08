@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/04 17:24:33 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/08 18:34:13 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/08 18:25:46 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/08 18:30:05 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char	*dstcpy = dst;
-	while (*src)
-		*dst++ = *src++;
-	*dst = '\0';
-	return (dstcpy);
+	while (n-- > 0)
+	{
+		*(char *)dest++ = *(char *)src++;
+		if (*(int *)src == c)
+			return (dest++);
+	}
+	return (dest);
 }
