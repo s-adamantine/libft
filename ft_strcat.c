@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/05 07:03:53 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/13 23:13:59 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/09 06:27:58 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/09 06:46:55 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 char *ft_strcat(char *dest, const char *src)
 {
-//	if (!dest || !src)
-//		return (dest);
-	while (ft_isprint(*dest) == 1)
-		dest++;
+	int i;
+
+	i = 0;
+	while (dest[i])
+		i++;
 	while (*src)
-		*dest++ = *src++;
-	*dest = '\0';
+		dest[i++] = *src++;
+	dest[i] = '\0';
 	return (dest);
 }
