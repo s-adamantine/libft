@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/19 16:44:23 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/08 17:57:54 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void	ft_bzero(void *s, size_t n);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr(char const *s);
@@ -38,6 +39,7 @@ void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_memdel(void **ap);
 void	*ft_memalloc(size_t size);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s1);
