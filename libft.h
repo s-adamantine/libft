@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/08/19 16:44:23 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/08 13:38:33 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void	ft_bzero(void *s, size_t n);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr(char const *s);
