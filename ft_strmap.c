@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/09 06:56:31 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/10 19:53:20 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/10 20:05:11 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/10 20:07:57 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int i;
+	int		i;
+	char	*res;
 
-	i = 0;	
-	while (s1[i])
+	i = 0;
+	res = (char *)malloc(sizeof(char)*(ft_strlen(s) + 1));
+	if (res)
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else if ((int)s1[i] < (int)s2[i])
-			return (-1);
-		else
-			return (1);
+		while (*s)
+		{
+			res[i++] = f(*s++);
+		}
+		res[i] = '\0';
+		return (res);
 	}
-	if (ft_strlen(s1) == ft_strlen(s2))
-		return (0);
-	else if (ft_strlen(s1) < ft_strlen(s2))
-		return (-1);
-	else
-		return (1);
+	return NULL;
 }
