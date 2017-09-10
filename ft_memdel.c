@@ -6,13 +6,13 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 11:07:43 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/09 17:59:36 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/10 10:14:46 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 void	ft_memdel(void **ap)
 {
-	free(ap);
-	ap = NULL;
+	free(*ap);
+	*ap = NULL;
 }
