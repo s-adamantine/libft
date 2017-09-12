@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/09 06:56:31 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/12 18:26:40 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/08 18:25:46 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/12 18:19:45 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	int i;
+	size_t i;
 
-	i = 0;	
-	while (s1[i])
+	i = 0;
+	while (i++ < n)
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else if ((unsigned long)s1[i] < (unsigned long)s2[i])
-			return (-1);
-		else
-			return (1);
+		if (*(int *)src == c)
+		{
+			return(dest);
+		}
+		*(char *)dest++ = *(char *)src++;
 	}
-	if (ft_strlen(s1) == ft_strlen(s2))
-		return (0);
-	else if (ft_strlen(s1) < ft_strlen(s2))
-		return (-1);
-	else
-		return (1);
+	return (NULL);
 }

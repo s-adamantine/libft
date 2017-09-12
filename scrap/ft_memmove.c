@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/09 06:56:31 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/12 18:26:40 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/10 20:43:12 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/10 20:49:41 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int i;
+	int		i;
+	char	*temp;
+	char	*destcpy;
 
-	i = 0;	
-	while (s1[i])
+	i = 0;
+	temp = (char *)malloc(sizeof(char)*(ft_strlen(src) + 1));
+	destcpy = dest;
+	while (*(char *)src)
 	{
-		if (s1[i] == s2[i])
-			i++;
-		else if ((unsigned long)s1[i] < (unsigned long)s2[i])
-			return (-1);
-		else
-			return (1);
+		temp[i] = *(char *)src++;
+		i++;
 	}
-	if (ft_strlen(s1) == ft_strlen(s2))
-		return (0);
-	else if (ft_strlen(s1) < ft_strlen(s2))
-		return (-1);
-	else
-		return (1);
+	while (n-- > 0)
+	{
+		*(char *)dest++ = *temp++;
+	}
+	return (destcpy);
 }
