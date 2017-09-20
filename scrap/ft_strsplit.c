@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/08 18:25:46 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/12 18:19:45 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/16 09:10:30 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/16 09:26:47 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memccpy(void *dest, const void *src, int c, size_t n)
+char	**ft_strsplit(char const *s, char c)
 {
-	size_t i;
+	int				i;
+	int				n;
+	unsigned long	len;
 
-	i = 0;
-	while (i++ < n)
+	len = 0;
+	while (s[i])
 	{
-		if (*(int *)src == c)
+		if ((unsigned long)s[i] == c)
 		{
-			return(dest);
+			
+			len = 0;
 		}
-		*(char *)dest++ = *(char *)src++;
+		i++;
+		len++;
 	}
-	return (NULL);
 }

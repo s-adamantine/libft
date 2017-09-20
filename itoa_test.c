@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   itoa_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/08 18:25:46 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/12 18:19:45 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/19 03:52:47 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/19 20:03:04 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void *ft_memccpy(void *dest, const void *src, int c, size_t n)
+int	main(int argc, char **argv)
 {
-	size_t i;
-
-	i = 0;
-	while (i++ < n)
-	{
-		if (*(int *)src == c)
-		{
-			return(dest);
-		}
-		*(char *)dest++ = *(char *)src++;
-	}
-	return (NULL);
+	printf("\n%s\n", ft_itoa(atoi(argv[1])));
+	return (0);
 }

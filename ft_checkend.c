@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_checkend.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/08 18:25:46 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/12 18:19:45 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/18 19:23:34 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/19 02:58:55 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memccpy(void *dest, const void *src, int c, size_t n)
+int		is_whitespace(char	*s)
 {
-	size_t i;
+	if (*s == '\n' || *s == '\t' || *s == ' ')
+		return (1);
+	else
+		return (-1);
+}
 
-	i = 0;
-	while (i++ < n)
+int		check_end(char	*s)
+{
+	while (*s)
 	{
-		if (*(int *)src == c)
+		if (is_whitespace(s) > 0)
 		{
-			return(dest);
+			s++;
 		}
-		*(char *)dest++ = *(char *)src++;
+		else
+		{
+			return (-1);
+		}
 	}
-	return (NULL);
+	return (1);
 }

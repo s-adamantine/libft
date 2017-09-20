@@ -6,45 +6,50 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 21:48:44 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/08 22:22:47 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/19 20:07:49 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_itoa(int n)
+int		num_len(int n)
 {
-	int ncpy;
 	int len;
-	int sign;
-	char *res;
 
 	len = 0;
-	sign = 0;
-	ncpy = n;
-	if (ncpy < 0)
+	if (n < 0)
 	{
-		ncpy = ncpy * -1;
-		len++;
-		sign--;
-	}
-	while (ncpy > 0)
-	{
-		ncpy = ncpy / 10;	
+		n = n * -1;
 		len++;
 	}
+	while (n > 0)
+	{
+		n = n / 10;	
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int		len;
+	char 	*res;
+
+	len = num_len(n);
 	res = (char *)malloc(sizeof(char)*(len + 1));
 	if (!res)
 		return NULL;
 	res[len] = '\0';
-	while (len > 0)
+	if (n < 0)
 	{
-		printf("%d", n % 10);
+		res[0] = '-';
+		n = n * -1;
+	}
+	while (--len >= 0)
+	{
 		res[len--] = (n % 10) + '0';
 		n = n / 10;
 	}
-	if (sign < 0)
-		res[0] = '-';
 	return (res);
 }
