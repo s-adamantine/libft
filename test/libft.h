@@ -6,16 +6,16 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/21 14:47:42 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/08 17:57:54 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
+#define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef	struct		s_list
 {
@@ -40,17 +40,14 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_memdel(void **ap);
 void	*ft_memalloc(size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 size_t	ft_strlen(const char *s);
-char	*ft_strcpy(char *dest, const char *src);
-char	*ft_strncpy(char *dest, const char *src, size_t n);
+char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s1);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_stralloc(char *str);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnew(size_t size);
-char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
