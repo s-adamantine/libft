@@ -18,7 +18,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*res;
 
 	i = 0;
-	res = (char *)malloc(sizeof(char)*(ft_strlen(s) + 1));
+	res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (res)
 	{
 		while (*s)
@@ -28,5 +28,5 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		res[i] = '\0';
 		return (res);
 	}
-	return NULL;
+	return (NULL);
 }

@@ -16,6 +16,6 @@ char	*ft_stralloc(char *str)
 {
 	char	*stralloced;
 
-	stralloced = (char *)malloc(sizeof(char)*(ft_strlen(str) + 1));
-	return (stralloced);	
+	stralloced = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	return (stralloced);
 }

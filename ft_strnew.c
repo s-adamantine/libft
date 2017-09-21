@@ -16,11 +16,11 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(char)*(size + 1));
+	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (str)
 	{
 		ft_bzero(str, size + 1);
 		return (str);
 	}
-	return NULL;
+	return (NULL);
 }

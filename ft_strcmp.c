@@ -16,7 +16,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 {
 	int i;
 
-	i = 0;	
+	i = 0;
 	if (ft_strlen(s1) < ft_strlen(s2))
 		return (-1);
 	else if (ft_strlen(s1) > ft_strlen(s2))

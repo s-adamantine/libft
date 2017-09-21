@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-char* ft_strsub(char const*s, unsigned int start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	int		i;
 	char	*sub;
 
 	i = 0;
-	sub = (char *)malloc(sizeof(char)*(len + 1));
+	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (sub)
 	{
 		while (start-- > 0)
@@ -28,5 +28,5 @@ char* ft_strsub(char const*s, unsigned int start, size_t len)
 		sub[i] = '\0';
 		return (sub);
 	}
-	return NULL;
+	return (NULL);
 }

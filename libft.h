@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
 
 typedef	struct		s_list
 {
@@ -40,10 +40,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_memdel(void **ap);
 void	*ft_memalloc(size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void 	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dest, const char *src);
-char 	*ft_strncpy(char *dest, const char *src, size_t n);
+char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_stralloc(char *str);

@@ -14,7 +14,9 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	char	*destcpy = dest;
+	char	*destcpy;
+
+	destcpy = dest;
 	while (*src)
 		*dest++ = *src++;
 	*dest = '\0';

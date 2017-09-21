@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		is_whitespace(char	*s)
+static int	is_whitespace(char *s)
 {
 	if (*s == '\n' || *s == '\t' || *s == ' ')
 		return (1);
@@ -20,7 +20,7 @@ int		is_whitespace(char	*s)
 		return (-1);
 }
 
-int		check_end(char	*s)
+int			check_end(char *s)
 {
 	while (*s)
 	{
