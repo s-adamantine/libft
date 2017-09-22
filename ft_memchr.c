@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 13:28:25 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/21 16:31:26 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/22 11:14:07 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/22 11:29:27 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_substring(const char *haystack, const char *needle)
+void	*ft_memchr(const void *s1, int c1, size_t n)
 {
-	while (*needle)
-	{
-		if (*haystack++ == *needle++)
-			;
-		else
-			return (-1);
-	}
-	return (1);
-}
+	unsigned char	*s;
+	unsigned char	c;
 
-char		*ft_strstr(const char *haystack, const char *needle)
-{
-	if (ft_strcmp(needle, "") == 0)
+	s = (unsigned char *) s1;
+	c = (unsigned char) c1;
+	while (n--)
 	{
-		return ((char *)haystack);
-	}
-	while (*haystack)
-	{
-		if (*haystack == *needle)
+		if (*s == c)
 		{
-			if (check_substring(haystack, needle) > 0)
-			{
-				return ((char *)haystack);
-			}
+			return (s);
 		}
-		haystack++;
+		s++;
 	}
 	return (NULL);
 }

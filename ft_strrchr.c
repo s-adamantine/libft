@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 14:27:27 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/21 14:31:56 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/21 16:31:29 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (is_last(s, c) == -1)
 		{
-			ft_strrchr(&s, c);
+			ft_strrchr(s, c);
 		}
 		else
 		{
-			return (s);
+			return ((char *)s);
 		}
 	}
 	return (NULL);
