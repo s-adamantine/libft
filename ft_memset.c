@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 14:27:27 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/23 18:41:04 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/23 20:03:18 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/23 20:22:10 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_last(const char *s, int c)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	while (*s++)
-	{
-		if (*s == c)
-			return (-1);
-	}
-	return (1);
-}
+	unsigned char	c1;
+	unsigned char	*b1;
 
-char	*ft_strrchr(const char *s, int c)
-{
-	while (*s && *s != c)
+	b1 = (unsigned char *)b;
+	c1 = (unsigned char)c;
+	while (len--)
 	{
-		s++;
+		*b1++ = c1;
 	}
-	if (*s == c)
-	{
-		if (is_last(s, c) == -1)
-		{
-			ft_strrchr(s, c);
-		}
-		else
-		{
-			return ((char *)s);
-		}
-	}
-	return (NULL);
+	return (b);
 }

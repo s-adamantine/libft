@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 14:27:27 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/23 18:41:04 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/22 18:47:08 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/23 18:05:55 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_last(const char *s, int c)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	while (*s++)
-	{
-		if (*s == c)
-			return (-1);
-	}
-	return (1);
-}
+	size_t				len;
+	unsigned char		ch;
+	const unsigned char *source;
 
-char	*ft_strrchr(const char *s, int c)
-{
-	while (*s && *s != c)
+	len = 0;
+	source = (const unsigned char *)src;
+	ch = (unsigned char)c;
+	while (source[len] != ch)
 	{
-		s++;
+		len++;
 	}
-	if (*s == c)
+	if (n < len)
 	{
-		if (is_last(s, c) == -1)
-		{
-			ft_strrchr(s, c);
-		}
-		else
-		{
-			return ((char *)s);
-		}
+		ft_memcpy(dest, src, len);
 	}
-	return (NULL);
+	else
+	{
+		ft_memcpy(dest, src, n);
+	}
+	return (dest);
 }

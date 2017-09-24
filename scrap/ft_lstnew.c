@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 14:27:27 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/23 18:41:04 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/23 19:46:59 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/23 20:09:48 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_last(const char *s, int c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	while (*s++)
-	{
-		if (*s == c)
-			return (-1);
-	}
-	return (1);
-}
+	t_list	*new;
 
-char	*ft_strrchr(const char *s, int c)
-{
-	while (*s && *s != c)
-	{
-		s++;
-	}
-	if (*s == c)
-	{
-		if (is_last(s, c) == -1)
-		{
-			ft_strrchr(s, c);
-		}
-		else
-		{
-			return ((char *)s);
-		}
-	}
-	return (NULL);
+	new = (t_list *)malloc(sizeof(t_list));
+	new->
+	return (new);
 }

@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   memccpy_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 14:27:27 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/23 18:41:04 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/23 17:36:35 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/23 17:37:50 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-static int	is_last(const char *s, int c)
+int	main(int argc, char **argv)
 {
-	while (*s++)
-	{
-		if (*s == c)
-			return (-1);
-	}
-	return (1);
-}
-
-char	*ft_strrchr(const char *s, int c)
-{
-	while (*s && *s != c)
-	{
-		s++;
-	}
-	if (*s == c)
-	{
-		if (is_last(s, c) == -1)
-		{
-			ft_strrchr(s, c);
-		}
-		else
-		{
-			return ((char *)s);
-		}
-	}
-	return (NULL);
+	memccpy(argv[1], argv[2], atoi(argv[3]), atoi(argv[4]));
+	ft_memccpy(argv[1], argv[2], atoi(argv[3]), atoi(argv[4]));
+	return (0);
 }
