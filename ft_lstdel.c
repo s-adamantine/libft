@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 09:44:52 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/25 09:56:50 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/27 12:49:28 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 		del((*alst)->content, (*alst)->content_size);
 		next_link = (*alst)->next;
 		free(*alst);
-		*alst = (*alst)->next;
+		*alst = next_link;
 	}
 	*alst = NULL;
 }
