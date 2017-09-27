@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memccpy_test.c                                     :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/23 17:36:35 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/27 11:36:31 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/22 18:47:08 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/25 17:43:09 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char	src[50];
-	char	dest1[50];
-	char	dest2[50];
+	size_t				len;
+	unsigned char		ch;
+	const unsigned char *source;
 
-	printf("%s\n", memccpy(argv[1], argv[2], atoi(argv[3]), atoi(argv[4])));
-	printf("%s\n", ft_memccpy(argv[1], argv[2], atoi(argv[3]), atoi(argv[4])));
-	return (0);
+	len = 0;
+	source = (const unsigned char *)src;
+	ch = (unsigned char)c;
+	while (source[len] != ch)
+	{
+		len++;
+	}
+	if (n < len)
+	{
+		ft_memcpy(dest, src, len);
+		return (NULL);
+	}
+	else
+	{
+		ft_memcpy(dest, src, n);
+		return (dest);
+	}
 }
