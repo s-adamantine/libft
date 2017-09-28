@@ -6,12 +6,11 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 10:11:30 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/25 17:12:54 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/28 01:41:46 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	last_delimiter(char const *s, char c, int i)
 {
@@ -30,9 +29,7 @@ static int	count_words(char const *s, char c)
 	i = 0;
 	count = 1;
 	if (s[i] == '\0')
-	{
 		return (0);
-	}
 	while (s[i] == c)
 	{
 		i++;
@@ -52,42 +49,49 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*word(char const *s, char c, int *i)
+static int	get_wordlen(char const *s, char c)
 {
 	int		len;
-	char	*res;
 
 	len = 0;
-	while (s[i] != c)
+	while (*s && *s++ != c)
 	{
 		len++;
 	}
-	res = (char *)malloc(sizeof(char)*len);
-
+	return (len);
 }
 
 char		**ft_strsplit(char const *s, char c)
 {
 	int		i;
-	char	*str;
+	int		j;
+	int		len;
 	char	**split;
 
 	i = 0;
+	j = 0;
 	split = (char **)malloc(sizeof(char *)*(count_words(s, c) + 1));
-	str = *split;
-	if (s[i] == c)
+	if (!split)
+		return (NULL);
+	while (*s)
 	{
-		i = last_delimiter(s, c, i);
-	}
-	while (s[i])
-	{
-		while (s[i] != c)
+		if (*s != c)
 		{
-			*str++ = s[i++];
-			split++;
+			j = 0;
+			len = get_wordlen(s, c);
+			split[i] = (char *)malloc(sizeof(char)*(len + 1));
+			while (len--)
+			{
+				split[i][j++] = *s++;
+			}
+			split[i][j] = '\0';
+			i++;
 		}
-		i++;
-		printf("%d\n", i);
+		else
+		{
+			s++;
+		}
 	}
+	split[i] = NULL;
 	return (split);
 }

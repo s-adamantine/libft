@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strsplit_test.c                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/25 15:43:20 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/28 01:33:20 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/27 17:46:59 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/27 21:27:41 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char	test[50];
-	char	**res;
+	size_t	n;
+	size_t	ret;
 
-	ft_strcpy(test, argv[1]);
-	res = ft_strsplit(test, ' ');
-	while (*res)
+	ret = 0;
+	n = size - ft_strlen(dest) - 1;
+	while (*dest)
 	{
-		printf("%s\n", *res++);	
+		dest++;
+		ret++;
+		n--;
 	}
-	return (0);
+	while (*src && n--)
+	{
+		*dest++ = *src++;
+		ret++;
+	}
+	*dest = '\0';
+	return (ret);
 }
