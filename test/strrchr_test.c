@@ -5,16 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/21 01:00:49 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/21 01:59:49 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/28 16:09:02 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/28 16:33:14 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	ft_strrchr(argv[1], atoi(argv[2]));
+	char	*src = "zthecakeialie!\0I'm hidden lol\r\n";
+	
+	printf("%s\n", strrchr(src, 'z'));
+	printf("%s\n", ft_strrchr(src, 'z'));
 	return (0);
 }
