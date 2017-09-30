@@ -6,15 +6,15 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/05 09:42:05 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/20 18:48:44 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/09/29 20:31:44 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while(*s && *s != c)
+	while (*s && *s != c)
 	{
 		s++;
 	}
