@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   strlcat_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/29 20:50:10 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/30 15:53:59 by sadamant         ###   ########.fr       */
+/*   Created: 2017/09/30 13:03:30 by sadamant          #+#    #+#             */
+/*   Updated: 2017/09/30 14:06:47 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+int	main(void)
 {
-	size_t	ret;
+	char	s1[4] = "";
+	char	s2[4] = "";
 
-	if (size > ft_strlen(dest))
-	{
-		ret = ft_strlen(src) + ft_strlen(dest);
-		size = size - ft_strlen(dest) - 1;
-		dest = dest + ft_strlen(dest);
-		while (*src && size--)
-		{
-			*dest++ = *src++;
-		}
-		*dest = '\0';
-		return (ret);
-	}
-	else
-	{
-		return (size + ft_strlen(src));
-	}
+	printf("%zu\n", ft_strlen("thx to ntoniolo for this test!"));
+	printf("%zu\n", strlcat(s1, "thx to ntoniolo for this test!", 4));
+	printf("%zu\n", ft_strlcat(s2, "thx to ntoniolo for this test!", 4));
+	return (0);
 }
