@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/30 17:28:39 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/10/02 15:10:46 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void				ft_memdel(void **ap);
 void				*ft_memalloc(size_t size);
 void				*ft_memchr(const void *s1, int c1, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
-void				*ft_memccpy(void *dest, const void *source, int c, size_t n);
+void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 size_t				ft_strlen(const char *s);
@@ -62,7 +62,7 @@ char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strnew(size_t size);
 char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char				*ft_strnstr(const char *big, const char *small, size_t len);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
