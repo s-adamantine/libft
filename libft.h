@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/02 22:47:47 by sadamant          #+#    #+#             */
-/*   Updated: 2017/10/02 15:10:46 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/10/02 21:29:56 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strdup(const char *s1);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
-char				*ft_stralloc(char *str);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strnew(size_t size);
