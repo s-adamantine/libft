@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 16:45:10 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/29 17:52:56 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/10/03 16:19:44 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,53 +18,17 @@ static int	check_end(char const *s)
 	while (*s)
 	{
 		if (*s == ' ' || *s == '\n' || *s == '\t')
-		{
 			s++;
-		}
 		else
-		{
 			return (-1);
-		}
 	}
 	return (1);
 }
 
-char		*ft_strtrim(char const	*s)
+static char	*make_trim(char const *str, int len)
 {
-	int		len;
-	char	*str;
-	char	*trimmed;
+	char *trimmed;
 
-	len = 0;
-	while (*s == ' ' || *s == '\n' || *s == '\t')
-	{
-		s++;
-	}
-	str = (char *)s;
-	while (*s)
-	{
-		if (*s == ' ' || *s == '\n' || *s == '\t')
-		{
-			if (check_end(s) > 0)
-			{
-				trimmed = (char *)malloc(sizeof(char)*(len + 1));
-				if (trimmed)
-				{
-					trimmed = ft_strncpy(trimmed, str, len);
-					trimmed[len] = '\0';
-					return (trimmed);
-				}
-				return (NULL);
-			}
-			else
-			{
-				len++;
-				s++;
-			}
-		}
-		len++;
-		s++;
-	}
 	trimmed = (char *)malloc(sizeof(char)*(len + 1));
 	if (trimmed)
 	{
@@ -73,4 +37,27 @@ char		*ft_strtrim(char const	*s)
 		return (trimmed);
 	}
 	return (NULL);
+}
+
+char		*ft_strtrim(char const	*s)
+{
+	int		len;
+	char	*str;
+
+	len = 0;
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+	{
+		s++;
+	}
+	str = (char *)s;
+	while (str[len])
+	{
+		if (str[len] == ' ' || str[len] == '\n' || str[len] == '\t')
+		{
+			if (check_end(str + len) > 0)
+				return (make_trim(str, len));
+		}
+		len++;
+	}
+	return (make_trim(str, len));
 }
