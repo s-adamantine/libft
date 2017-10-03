@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 10:06:13 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/09 10:09:28 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/10/03 16:29:25 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_strequ(char const *s1, char const *s2)
 		{
 			if (s1[i] == s2[i])
 				i++;
+			else
+				return (0);
 		}
 		return (1);
 	}
