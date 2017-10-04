@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 16:45:10 by sadamant          #+#    #+#             */
-/*   Updated: 2017/10/03 16:19:44 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/10/04 12:03:26 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*make_trim(char const *str, int len)
 {
 	char *trimmed;
 
-	trimmed = (char *)malloc(sizeof(char)*(len + 1));
+	trimmed = (char *)malloc(sizeof(char) * (len + 1));
 	if (trimmed)
 	{
 		trimmed = ft_strncpy(trimmed, str, len);
@@ -39,11 +39,13 @@ static char	*make_trim(char const *str, int len)
 	return (NULL);
 }
 
-char		*ft_strtrim(char const	*s)
+char		*ft_strtrim(char const *s)
 {
 	int		len;
 	char	*str;
 
+	if (!s)
+		return (NULL);
 	len = 0;
 	while (*s == ' ' || *s == '\n' || *s == '\t')
 	{
