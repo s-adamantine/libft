@@ -6,7 +6,7 @@
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 06:56:31 by sadamant          #+#    #+#             */
-/*   Updated: 2017/09/14 21:56:37 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/10/04 12:33:05 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	ft_strcmp(const char *s1, const char *s2)
 	{
 		if (s1[i] == s2[i])
 			i++;
-		else if ((unsigned long)s1[i] < (unsigned long)s2[i])
-			return (-1);
 		else
-			return (1);
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	}
 	return (0);
 }
