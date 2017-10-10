@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newdarray.c                                     :+:      :+:    :+:   */
+/*   ft_darraynew.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadamant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/05 16:52:59 by sadamant          #+#    #+#             */
-/*   Updated: 2017/10/05 18:24:46 by sadamant         ###   ########.fr       */
+/*   Updated: 2017/10/10 12:38:07 by sadamant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_newdarray(int i, int j)
+char	**ft_darraynew(int i, int j)
 {
 	int		n;
 	char	**darray;
 
 	n = 0;
-	darray = (char **)malloc(sizeof(char *)*i);
+	darray = ft_memalloc(i);
 	while (n < i)
 	{
-		darray[n++] = (char *)malloc(sizeof(char) * j);
+		darray[n++] = ft_memalloc(j);
 	}
 	return (darray);
 }
