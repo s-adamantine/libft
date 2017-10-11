@@ -76,6 +76,7 @@ int					ft_isascii(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_isprint(int c);
+int					ft_strcchr(char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
